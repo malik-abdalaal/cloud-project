@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Simple memcache</title>
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="/uploadImage" class="nav-link" data-info="Upload Image">Upload Image</a></li>
+            <li><a href="/getImage" class="nav-link" data-info="Get Image">Get Image</a></li>
+            <li><a href="/allKeys" class="nav-link" data-info="All Keys">All Keys</a></li>
+            <li><a href="/configration" class="nav-link" data-info="Configration">Configration</a></li>
+            <li><a href="/statistics" class="nav-link" data-info="Statistics">Statistics</a></li>
+        </ul>
+    </nav>
+
+    <form  method="post" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            <div class="upload-box">
+                <h1 class="page-title">Upload Image</h1>
+                
+                    <!-- <input type="text" class="key-input" placeholder="Enter unique key" name=""> -->
+                    {{form.uniquekey(class_ = "key-input" , placeholder = "Enter unique key", type='text')}}
+                    <!-- <input type="file" class="up-img" name="file"> -->
+                    {{form.file(class_ = 'up-img')}}
+                    <!-- <button class="upload-btn" type="submit"> -->
+                    {{form.submit(class_ = 'upload-btn', value='Upload')}}
+                    <!-- <span>
+                        Upload
+                    </span> -->
+                <!-- </button>   -->
+            </div>
+        </div>
+    </form>
+    
+    
+
+</body>
+</html>

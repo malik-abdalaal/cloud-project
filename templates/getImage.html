@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script>src = "../static/script.js"</script> -->
+    <title>Simple memcache</title>
+    <script src=
+    "https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity=
+    "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous">
+    </script>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity=
+    "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous">
+    </script>
+   
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="/uploadImage" class="nav-link" data-info="Upload Image">Upload Image</a></li>
+            <li><a href="/getImage" class="nav-link" data-info="Get Image">Get Image</a></li>
+            <li><a href="/allKeys" class="nav-link" data-info="All Keys">All Keys</a></li>
+            <li><a href="/configration" class="nav-link" data-info="Configration">Configration</a></li>
+            <li><a href="/statistics" class="nav-link" data-info="Statistics">Statistics</a></li>
+        </ul>
+    </nav>
+    <div class="div-test">
+
+        <form  method="post" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            <div class="get-container">
+                
+                <div class="upload-box get-image-box">
+                    <h1 class="page-title">Get Image</h1>
+                    <label>Enter Key To Get Image</label>
+                    {{form.uniquekey(class_ = "key-input" , placeholder = "key", type='text')}}
+                    
+                    {{form.submit(class_ = 'upload-btn', value='Get Image')}}
+                </div>
+            </div>
+        </form>
+        
+        <div class="img-show-box">
+            
+            {% if error %}  
+            <p class="not-fount-img"><strong>Error</strong>: {{error}}</p>  
+            {% else %}
+            <img  src= "{{ image }}" style="width:100%;max-width:400px">
+            {% endif %}
+        </div>
+    
+    </div>
+
+</body>
+</html>

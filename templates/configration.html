@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Simple memcache</title>
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="/uploadImage" class="nav-link" data-info="Upload Image">Upload Image</a></li>
+            <li><a href="/getImage" class="nav-link" data-info="Get Image">Get Image</a></li>
+            <li><a href="/allKeys" class="nav-link" data-info="All Keys">All Keys</a></li>
+            <li><a href="/configration" class="nav-link" data-info="Configration">Configration</a></li>
+            <li><a href="/statistics" class="nav-link" data-info="Statistics">Statistics</a></li>
+        </ul>
+    </nav>
+
+    <form  method="post" enctype="multipart/form-data">
+        {{form.hidden_tag()}}    
+        <div class="form-group">
+    <div class="upload-box">
+        <h1 class="page-title">Configration</h1>
+        <div class="ca-cpacity-box">
+            <label for="ca-cap">Cache Capacity MB</label>
+            <!-- <input type="number" class="cache-capacity" value="250"> -->
+            {{form.size(class_ = "key-input" , type='text',value = '250')}}
+        </div>
+        <div class="select-policy">
+            <label for="se-po">Replace Policy</label>
+
+            <div class="po-type">
+                
+            <label for="least">Least Recently Used</label>
+            <input value="1" type="radio" id="least" name = 'policy' checked>
+            <!-- <br> -->
+            <label for="random">Random Replacement</label>
+            <input value="2" type="radio" id="random" name = 'policy'>
+            </div>
+            
+        </div>
+
+        <div class="conf-btn-box">
+            <!-- <button type="submit" class="submit">Submit</button> -->
+            {{form.submit(class_ = 'submit', value='Submit')}}
+            <!-- {{form.clear(class_ = 'clear', value='Clear') }} -->
+            <a class="btn clear" href="/clear" name = 'Clear'>Clear</a>
+        </div>
+    </div>
+</div>
+</form>
+
+</body>
+</html>

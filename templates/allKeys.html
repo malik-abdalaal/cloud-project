@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Simple memcache</title>
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="/uploadImage" class="nav-link" data-info="Upload Image">Upload Image</a></li>
+            <li><a href="/getImage" class="nav-link" data-info="Get Image">Get Image</a></li>
+            <li><a href="/allKeys" class="nav-link" data-info="All Keys">All Keys</a></li>
+            <li><a href="/configration" class="nav-link" data-info="Configration">Configration</a></li>
+            <li><a href="/statistics" class="nav-link" data-info="Statistics">Statistics</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="upload-box all-keys">
+        <h1 class="page-title">All Keys Stored In The Database</h1>
+        <div class="d-flex">
+
+            <table>
+                {%for i in range(0, len)%}
+                <td>{{records[i][0]}}</td>
+                {%endfor%}
+            </table>
+        
+    </div>
+</div>
+
+</body>
+</html>

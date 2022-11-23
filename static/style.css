@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    --main-color: rgb(70%, 90%, 77%);
+    --second-color:rgb(7%, 8%, 9%);
+}
+body{
+    background-color: var(--second-color);
+}
+nav{
+    padding: 20px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li{
+    margin:0 10px;
+    font-weight: 500;
+}
+
+nav ul li a{
+    position: relative;
+    color: #fff;
+    letter-spacing: 1px;
+}
+nav ul li a::before{
+    position: absolute;
+    content: attr(data-info);
+    color: var(--main-color) ;
+    overflow: hidden;
+    transition: 0.5s all linear;
+    height: 100%;
+}
+
+nav ul li a:hover::before{
+    height: 0%;
+}
+
+
+.upload-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: var(--main-color);
+    width: 600px;
+    margin: auto;
+    margin-top: 150px;
+    padding: 50px;
+    border-radius: 8px;
+    gap: 25px;
+}
+
+.upload-box .upload-btn{
+    width: 120px;
+    height: 45px;
+    text-align: center;
+    position: relative;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    z-index: 2;
+    overflow: hidden;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    background: #4caf50;
+}
+
+.upload-box .upload-btn span {
+    position: relative;
+    z-index: 2;
+    padding: 9px 0;
+    font-size: 1.1rem;
+    align-items: center;
+    background: var(--second-color);
+    border-radius: 3px;
+    display: block;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+
+.upload-box .upload-btn:hover:before {
+    animation: btnX .75s linear infinite;
+}
+
+@keyframes btnX{
+    to{
+        transform:translateX(-50%)
+    }
+}
+
+
+
+.upload-box .up-img{
+    width: 100%;
+    height: 50px;
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    padding: 14px 0 0 150px;
+    color: hsl(196deg 100% 73%);
+}
+
+.upload-box .up-img::before{
+    position: absolute;
+    content: "Choose File";
+    color: #fff;
+    width: 88px;
+    height: 23px;
+    background-color: rgb(91%, 83%, 50%);
+    inset: 0;
+    font-size: 14px;
+    border-radius: 2px;
+    left: 149px;
+    top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    color: rgb(215 176 15);
+    font-weight: 600;
+}
+
+
+.upload-box.all-keys{
+    margin-top: 20px;
+    width: 80%;
+}
+.upload-box.all-keys h1{
+    color: hsl(196deg 100% 73%);
+}
+.upload-box.all-keys table{
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+}
+.upload-box.all-keys table tbody tr{
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-box.all-keys table tbody tr td{
+    padding: 12px 0;
+    color: var(--second-color);
+}
+.upload-box.all-keys table tbody tr td:not(:last-of-type){
+    border-bottom:1px solid var(--second-color) ;
+
+}
+
+.ca-cpacity-box{
+    width: 100%;
+}
+
+.ca-cpacity-box label , .select-policy label{
+    /* display: block; */
+    margin-bottom: 8px;
+}
+.select-policy{
+    width: 100%;
+}
+.ca-cpacity-box label , .select-policy input:first-of-type{
+    margin-right: 50px;
+}
+.po-type {
+    margin-top: 15px;
+}
+.upload-box  select{
+    font-size: 16px !important;
+}
+.conf-btn-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.submit , .clear{
+    background: #11c311;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.upload-box .clear{
+    background: red;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.get-container{
+    display: flex;
+    padding: 0 150px;
+    align-items: start;
+    justify-content: center;
+    gap: 25px;
+}
+
+.upload-box.get-image-box{
+    margin: 0;
+    height: 300px;
+    padding: 30px;
+}
+
+.get-container .image-view{
+    background-color: #fff;
+    width: 600px;
+    height: 600px;
+    border-radius: 8px;
+}
+
+
+.upload-box .key-input , .cache-capacity,
+.upload-box  select
+{
+    width: 100%;
+    height: 50px;
+    border:2px solid var(--main-color);
+    border-radius: 8px;
+    outline: none;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+
+.upload-box.statistics{
+    width: 80%;
+}
+.upload-box.statistics h1{
+    color: hsl(196deg 100% 73%);
+}
+
+.upload-box.statistics table {
+    width: 100%;
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    text-align: center;
+    color: var(--second-color);
+}
+.upload-box.statistics table th {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--second-color);
+}
+.upload-box.statistics table td{
+    padding: 10px 0;
+    border-bottom: 1px solid var(--second-color);
+}
+.upload-box.statistics table tr:last-of-type td{
+    border-bottom: none;
+}
+
+
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------- */
+ul{
+    list-style: none;
+
+}
+a{
+    text-decoration: none;
+}
+
+/* Malik */
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+
+  .not-fount-img {
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 22px;
+}
+.not-fount-img strong{
+    color: red;
+}
+
+
+.img-show-box{
+    display: flex;
+    justify-content: end;
+}
+.div-test{
+    padding-right: 50px;
+    display: flex;
+    margin-top: 50px;
+}
