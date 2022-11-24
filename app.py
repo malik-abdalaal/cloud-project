@@ -19,7 +19,7 @@ from flask_wtf import FlaskForm
 from wtforms import FileField,SubmitField,StringField,validators,SelectField
 from werkzeug.utils import secure_filename
 import datetime
-import numpy as np
+#import numpy as np
 from sys import getsizeof
 #from PIL import Image
 #from io import BytesIO
@@ -380,6 +380,8 @@ def clear():
     flash('Error')
     return redirect('/configration')  
        
+if __name__ == '__main__':
+    app.run(debug=False ,port = 5000 ,host ='0.0.0.0') 
 # def interval_task():
 #     cursor = mysql.connection.cursor()
 #     cursor.execute('SELECT capacity FROM cache WHERE id = 2 ')
