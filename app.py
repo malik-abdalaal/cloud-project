@@ -42,9 +42,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 app = Flask(__name__)
 scheduler = BackgroundScheduler()
 scheduler.start()
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_HOST'] = 'database-1.cgz5vmvv53yv.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] = '12345678'
 app.config['MYSQL_DB'] = 'flask'
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'static/images/'
